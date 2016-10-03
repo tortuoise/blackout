@@ -1,0 +1,4 @@
+        <h4 style="font-size=12px;">Events</h4>
+                {{range .}}
+                        <p>{{.Id}}: {{.Summary}} {{.Start}} {{.End}}</p>
+                {{end}}

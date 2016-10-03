@@ -1,0 +1,17 @@
+        {{range .Records}}
+                <h4 style="font-size=12px;">Request Log</h4>
+                <p>{{.EndTime}}: {{.IP}} {{.Method}} {{.Resource}}</p>
+                {{with .AppLogs}}
+                        <h5 style="font-size=10px;">App Logs:</h5>
+                        <ul>
+                        {{range .}}
+                                <li>{{.Time}}: {{.Message}}</li>
+                        <{{end}}
+                        </ul>
+                {{end}}
+        {{end}}
+
+        {{with .Offset}}
+                <a href="?offset={{.}}">Next</a>
+        {{end}}
+
